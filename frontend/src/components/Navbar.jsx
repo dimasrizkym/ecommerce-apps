@@ -10,19 +10,19 @@ const Navbar = () => {
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>HOME</p>
-          <hr class="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/collection" className="flex flex-col items-center gap-1">
           <p>COLLECTION</p>
-          <hr class="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
           <p>ABOUT</p>
-          <hr class="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
           <p>CONTACT</p>
-          <hr class="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
       </ul>
 
@@ -45,7 +45,7 @@ const Navbar = () => {
         <Link to="/cart" className="relative">
           <img src={assets.cart_icon} className="w-5 min-w-5" alt="" />
 
-          <p class="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
+          <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
             0
           </p>
         </Link>
