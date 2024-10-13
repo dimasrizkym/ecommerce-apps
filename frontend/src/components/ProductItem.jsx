@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { Link } from "react-router-dom";
 
-const ProducItem = ({ id, image, name, price }) => {
+const ProductItem = ({ id, image, name, price }) => {
   const { currency } = useContext(ShopContext);
   return (
     <Link className="text-gray-700 cursor-pointer" to={`/product/${id}`}>
@@ -23,4 +23,4 @@ const ProducItem = ({ id, image, name, price }) => {
   );
 };
 
-export default ProducItem;
+export default ProductItem;
