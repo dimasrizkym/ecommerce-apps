@@ -6,7 +6,9 @@ const Navbar = () => {
 
   return (
     <div className="flex items-center justify-between py-5 font-medium">
-      <img src={assets.logo} className="w-36" alt="" />
+      <Link to="/">
+        <img src={assets.logo} className="w-36" alt="" />
+      </Link>
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>HOME</p>
@@ -42,13 +44,13 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <Link to="/cart" className="relative">
+        <NavLink to="/cart" className="relative">
           <img src={assets.cart_icon} className="w-5 min-w-5" alt="" />
 
           <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
             0
           </p>
-        </Link>
+        </NavLink>
         <img
           onClick={() => setVisible(true)}
           src={assets.menu_icon}
@@ -69,34 +71,34 @@ const Navbar = () => {
             <img src={assets.dropdown_icon} className="h-4 rotate-180" alt="" />
             <p>Back</p>
           </div>
-          <Link
+          <NavLink
             onClick={() => setVisible(false)}
             to={"/"}
             className="py-2 pl-6 border"
           >
             HOME
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             onClick={() => setVisible(false)}
             to="/collection"
             className="py-2 pl-6 border"
           >
             COLLECTION
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             onClick={() => setVisible(false)}
             to="/about"
             className="py-2 pl-6 border"
           >
             ABOUT
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             onClick={() => setVisible(false)}
             to="/contact"
             className="py-2 pl-6 border"
           >
             CONTACT
-          </Link>
+          </NavLink>
         </div>
       </div>
     </div>
