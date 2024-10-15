@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
+import RelatedProducts from "../components/RelatedProducts";
+import { assets } from "../assets/assets";
 
 const Product = () => {
   const { productId } = useParams();
@@ -48,11 +50,11 @@ const Product = () => {
         <div className="flex-1">
           <h1 className="font-medium text-2xl mt-2">{productData.name}</h1>
           <div className="flex items-center gap-1 mt-2">
-            <img src="" alt="" className="w-3 5" />
-            <img src="" alt="" className="w-3 5" />
-            <img src="" alt="" className="w-3 5" />
-            <img src="" alt="" className="w-3 5" />
-            <img src="" alt="" className="w-3 5" />
+            <img src={assets.star_icon} alt="" className="w-3 5" />
+            <img src={assets.star_icon} alt="" className="w-3 5" />
+            <img src={assets.star_icon} alt="" className="w-3 5" />
+            <img src={assets.star_icon} alt="" className="w-3 5" />
+            <img src={assets.star_dull_icon} alt="" className="w-3 5" />
             <p className="pl-2">(122)</p>
           </div>
           <p className="mt-5 text-3xl font-medium">
@@ -115,95 +117,10 @@ const Product = () => {
       </div>
 
       {/* Related products */}
-      <div className="my-24">
-        <div className="text-center text-3xl py-2">
-          <div className="inline-flex gap-2 items-center mb-3">
-            <p className="text-gray-500">
-              RELATED{" "}
-              <span className="text-gray-700 font-medium">PRODUCTS</span>
-            </p>
-            <p className="w-8 sm:w-12 h-[1px] sm:h-[2px] bg-gray-700"></p>
-          </div>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
-          <a
-            className="text-gray-700 cursor-pointer"
-            href="/product/6683d5b67f779795ecfa98bb"
-          >
-            <div className="overflow-hidden">
-              <img
-                className="hover:scale-110 transition ease-in-out"
-                src="https://raw.githubusercontent.com/avinashdm/gs-images/main/forever/p_img14.png"
-                alt=""
-              />
-            </div>
-            <p className="pt-3 pb-1 text-sm">
-              Boy Round Neck Pure Cotton T-shirt
-            </p>
-            <p className="text-sm font-medium">$60</p>
-          </a>
-          <a
-            className="text-gray-700 cursor-pointer"
-            href="/product/6683d4b27f779795ecfa98ab"
-          >
-            <div className="overflow-hidden">
-              <img
-                className="hover:scale-110 transition ease-in-out"
-                src="https://raw.githubusercontent.com/avinashdm/gs-images/main/forever/p_img6.png"
-                alt=""
-              />
-            </div>
-            <p className="pt-3 pb-1 text-sm">Girls Round Neck Cotton Top</p>
-            <p className="text-sm font-medium">$56</p>
-          </a>
-          <a
-            className="text-gray-700 cursor-pointer"
-            href="/product/6683d7567f779795ecfa98cf"
-          >
-            <div className="overflow-hidden">
-              <img
-                className="hover:scale-110 transition ease-in-out"
-                src="https://raw.githubusercontent.com/avinashdm/gs-images/main/forever/p_img24.png"
-                alt=""
-              />
-            </div>
-            <p className="pt-3 pb-1 text-sm">
-              Boy Round Neck Pure Cotton T-shirt
-            </p>
-            <p className="text-sm font-medium">$30</p>
-          </a>
-          <a
-            className="text-gray-700 cursor-pointer"
-            href="/product/6683d7b57f779795ecfa98d5"
-          >
-            <div className="overflow-hidden">
-              <img
-                className="hover:scale-110 transition ease-in-out"
-                src="https://raw.githubusercontent.com/avinashdm/gs-images/main/forever/p_img3.png"
-                alt=""
-              />
-            </div>
-            <p className="pt-3 pb-1 text-sm">Girls Round Neck Cotton Top</p>
-            <p className="text-sm font-medium">$38</p>
-          </a>
-          <a
-            className="text-gray-700 cursor-pointer"
-            href="/product/6683d6547f779795ecfa98c3"
-          >
-            <div className="overflow-hidden">
-              <img
-                className="hover:scale-110 transition ease-in-out"
-                src="https://raw.githubusercontent.com/avinashdm/gs-images/main/forever/p_img18.png"
-                alt=""
-              />
-            </div>
-            <p className="pt-3 pb-1 text-sm">
-              Boy Round Neck Pure Cotton T-shirt
-            </p>
-            <p className="text-sm font-medium">$28</p>
-          </a>
-        </div>
-      </div>
+      <RelatedProducts
+        category={productData.category}
+        subCategory={productData.subCategory}
+      />
     </div>
   ) : (
     <div className="opacity-0"></div>
